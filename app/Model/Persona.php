@@ -15,7 +15,6 @@ class Persona extends AppModel {
  * @var string
  */
 	public $displayField = 'nombre';
-	public $recursive = 0;
 
 /**
  * Validation rules
@@ -91,7 +90,7 @@ class Persona extends AppModel {
 		),
 		'Usuario' => array(
 			'className' => 'Usuario',
-			'foreignKey' => 'id',
+			'foreignKey' => 'id_persona',
 			'dependent' => false,
 			'conditions' => '',
 			'fields' => '',

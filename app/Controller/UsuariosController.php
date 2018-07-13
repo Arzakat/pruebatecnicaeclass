@@ -45,18 +45,23 @@ class UsuariosController extends AppController {
  *
  * @return void
  */
-	public function add() {
+	public function add($idPersona) {
+
+
 		if ($this->request->is('post')) {
 			$this->Usuario->create();
+
 			if ($this->Usuario->save($this->request->data)) {
-				$this->Flash->success(__('Se ha guardado el usuario.'));
-				return $this->redirect(array('action' => 'index'));
+				$this->Flash->success(__('El usuario ha sido guardado correctamente.'));
+				return $this->redirect(array('controller' =>'personas', 'action' => 'usuarios_persona', $idPersona));
 			} else {
-				$this->Flash->error(__('El usuario no ha podido ser guardado, por favor intente nuevamente.'));
+				$this->Flash->error(__('El usuario no pudo ser guardado. Intente nuevamente.'));
 			}
 		}
-	}
 
+		$this->request->data['Usuario']['id_persona'] = $idPersona;
+
+	}
 /**
  * edit method
  *
@@ -70,10 +75,10 @@ class UsuariosController extends AppController {
 		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Usuario->save($this->request->data)) {
-				$this->Flash->success(__('Se ha guardado el usuario.'));
-				return $this->redirect(array('action' => 'index'));
+				$this->Flash->success(__('The usuario has been saved.'));
+				return $this->redirect(array('controller' => 'personas', 'action' => 'usuarios_persona', $this->request->data['Usuario']['id_persona']));
 			} else {
-				$this->Flash->error(__('El usuario no ha podido ser guardado, por favor intente nuevamente.'));
+				$this->Flash->error(__('The usuario could not be saved. Please, try again.'));
 			}
 		} else {
 			$options = array('conditions' => array('Usuario.' . $this->Usuario->primaryKey => $id));
@@ -88,17 +93,17 @@ class UsuariosController extends AppController {
  * @param string $id
  * @return void
  */
-	public function delete($id = null) {
+	public function delete($id = null, $idPersona) {
 		$this->Usuario->id = $id;
 		if (!$this->Usuario->exists()) {
 			throw new NotFoundException(__('Invalid usuario'));
 		}
 		$this->request->allowMethod('post', 'delete');
 		if ($this->Usuario->delete()) {
-			$this->Flash->success(__('El usuario ha sido eliminado.'));
+			$this->Flash->success(__('The usuario has been deleted.'));
 		} else {
-			$this->Flash->error(__('El usuario no ha podido ser eliminado, por favor intente nuevamente.'));
+			$this->Flash->error(__('The usuario could not be deleted. Please, try again.'));
 		}
-		return $this->redirect(array('action' => 'index'));
+		return $this->redirect(array('controller' =>'personas', 'action' => 'usuarios_persona', $idPersona));
 	}
 }

@@ -1,10 +1,10 @@
 <div class="actions">
 	<h2><?php echo __('Buscador'); ?></h2>
 	<?php echo $this->Form->create('Buscador', array(
-		'url' => [
+		'url' => array(
 			'controller' => 'personas',
 			'action' => 'buscador'
-		]
+		)
 	)); ?>
 		<fieldset>
 			<p><?php echo __('Escribe tus criterios de búsqueda para comenzar a buscar en el listado de personas.'); ?></p>

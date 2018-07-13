@@ -24,7 +24,7 @@
 		<td class="actions">
 			<?php echo $this->Html->link(__('user'), array('action' => 'usuarios_persona', $persona['Persona']['id'])); ?>
 			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $persona['Persona']['id'])); ?>
-			<?php echo $this->Form->postLink(_('Delete'), array('action' => 'delete', $persona['Persona']['id']), array('confirm' => _('Are you sure you want to delete # %s?', $persona['Persona']['id']))); ?>
+			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $persona['Persona']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $persona['Persona']['id']))); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>

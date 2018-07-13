@@ -15,7 +15,7 @@ class PersonasController extends AppController {
  */
 	public $components = array('Paginator');
 
-	public $uses array('Persona');
+	public $uses = array('Persona');
 /**
  * index method
  *
@@ -50,17 +50,17 @@ class PersonasController extends AppController {
 				$misCondiciones['Persona.apellido_materno LIKE'] = "%".$miApellidoMaterno."%";
 			}
 			if(!empty($miEmail)){
-				$misCondiciones['Persona.email LIKE'] = "%".$miNombre."%";
+				$misCondiciones['Persona.email LIKE'] = "%".$miEmail."%";
 			}
 
 			if(empty($misCondiciones)){
-				$this->redirect(['controller' => 'personas', 'action' => 'index']);
+				$this->redirect(array('controller' => 'personas', 'action' => 'index'));
 			}
 
 			$this->paginate = array('conditions' => $misCondiciones);
 			$this->set('personas', $this->Paginator->paginate());
 		} else {
-			$this->redirect(['controller' => 'personas', 'action' => 'index']);
+			$this->redirect(array('controller' => 'personas', 'action' => 'index'));
 		}
 	}
 
@@ -139,5 +139,14 @@ class PersonasController extends AppController {
 			$this->Flash->error(__('La persona no ha podido ser eliminada, por favor intente nuevamente.'));
 		}
 		return $this->redirect(array('action' => 'index'));
+	}
+
+	public function usuarios_persona($idPersona = null){
+
+	$persona = $this->Persona->find('first', array(
+		'conditions' => array('id' => $idPersona),
+		'contain' => array('Usuario'),
+		));
+	$this->set('persona', $persona);
 	}
 }

@@ -24,7 +24,7 @@
 		<td class="actions">
 			<?php echo $this->Html->link(__('user'), array('action' => 'usuarios_persona', $persona['Persona']['id'])); ?>
 			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $persona['Persona']['id'])); ?>
-			<?php echo $this->Form->postLink(_('Eliminar'), array('action' => 'delete', $persona['Persona']['id']), array('confirm' => _('Estás seguro que quieres eliminar?', $persona['Persona']['id']))); ?>
+			<?php echo $this->Form->postLink(__('Eliminar'), array('action' => 'delete', $persona['Persona']['id']), array('confirm' => __('Estás seguro que quieres eliminar?', $persona['Persona']['id']))); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
