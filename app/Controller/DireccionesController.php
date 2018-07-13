@@ -46,6 +46,25 @@ class DireccionesController extends AppController {
  * @return void
  */
 	public function add() {
+
+		$paises = $this->Direccione->Paise->find('list', array(
+			'fields' => array('nombre'),
+			'expects' => array()
+		));
+		$this->set('paises', $paises);
+
+		$regiones = $this->Direccione->Regione->find('list', array(
+			'fields' => array('nombre'),
+			'expects' => array()
+		));
+		$this->set('regiones', $regiones);
+
+		$comunas = $this->Direccione->Comuna->find('list', array(
+			'fields' => array('nombre'),
+			'expects' => array()
+		));
+		$this->set('comunas', $comunas);
+
 		if ($this->request->is('post')) {
 			$this->Direccione->create();
 			if ($this->Direccione->save($this->request->data)) {

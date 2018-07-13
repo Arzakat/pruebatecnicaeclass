@@ -2,6 +2,9 @@
 
 <div class="personas index">
 	<h2><?php echo __('Personas'); ?></h2>
+	<div class="actions">
+		<?php echo $this->Html->link(__('Crear'), array('controller' => 'personas', 'action' => 'add'), array('class' => '')); ?>
+	</div>
 	<table cellpadding="0" cellspacing="0">
 	<thead>
 	<tr>
@@ -22,9 +25,9 @@
 		<td><?php echo $this->Html->link($persona['Persona']['fecha_nacimiento'], array('action' => 'view', $persona['Persona']['id'])); ?>&nbsp;</td>
 		<td><?php echo $this->Html->link($persona['Persona']['email'], array('action' => 'view', $persona['Persona']['id'])); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('user'), array('action' => 'usuarios_persona', $persona['Persona']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $persona['Persona']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $persona['Persona']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $persona['Persona']['id']))); ?>
+			<?php echo $this->Html->link(__('Usuarios'), array('action' => 'usuarios_persona', $persona['Persona']['id'])); ?>
+			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $persona['Persona']['id'])); ?>
+			<?php echo $this->Form->postLink(__('Eliminar'), array('action' => 'delete', $persona['Persona']['id']), array('confirm' => __('¿Estás seguro que deseas eliminar esta persona?', $persona['Persona']['id']))); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>

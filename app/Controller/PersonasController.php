@@ -85,6 +85,14 @@ class PersonasController extends AppController {
  * @return void
  */
 	public function add() {
+		
+		$tipos_documentos = $this->Persona->TiposDocumento->find('list', array(
+			'fields' => array('nombre'),
+			'expects' => array()
+		));
+
+		$this->set('tipos_documentos', $tipos_documentos);
+
 		if ($this->request->is('post')) {
 			$this->Persona->create();
 			if ($this->Persona->save($this->request->data)) {

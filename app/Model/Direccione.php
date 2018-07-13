@@ -49,4 +49,33 @@ class Direccione extends AppModel {
 			'order' => ''
 		)
 	);
+
+/**
+ * hasOne associations
+ *
+ * @var array
+ */
+	public $hasOne = array(
+		'Paise' => array(
+			'className' => 'Paise',
+			'foreignKey' => 'id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		),
+		'Regione' => array(
+			'className' => 'Regione',
+			'foreignKey' => 'id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		),
+		'Comuna' => array(
+			'className' => 'Comuna',
+			'foreignKey' => 'id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		)
+	);
 }

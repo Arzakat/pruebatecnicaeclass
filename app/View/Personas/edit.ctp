@@ -13,7 +13,10 @@
 		echo $this->Form->input('email');
 	?>
 	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
+<?php echo $this->Form->end(__('Guardar')); ?>
+	<div class="actions">
+		<?php echo $this->Html->link(__('Volver'), array('controller' => 'personas', 'action' => 'index')); ?>
+	</div>
 </div>
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>

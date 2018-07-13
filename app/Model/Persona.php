@@ -103,4 +103,18 @@ class Persona extends AppModel {
 		)
 	);
 
+/**
+ * hasOne associations
+ *
+ * @var array
+ */
+	public $hasOne = array(
+		'TiposDocumento' => array(
+			'className' => 'TiposDocumento',
+			'foreignKey' => 'id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		)
+	);
 }

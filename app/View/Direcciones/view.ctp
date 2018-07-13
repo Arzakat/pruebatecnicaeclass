@@ -1,5 +1,5 @@
 <div class="direcciones view">
-<h2><?php echo __('Direccione'); ?></h2>
+<h2><?php echo __('Direcciones'); ?></h2>
 	<dl>
 		<dt><?php echo __('Id'); ?></dt>
 		<dd>
