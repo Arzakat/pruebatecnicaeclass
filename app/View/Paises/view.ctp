@@ -16,12 +16,12 @@
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('Edit Paise'), array('action' => 'edit', $paise['Paise']['id'])); ?> </li>
-		<li><?php echo $this->Form->postLink(__('Delete Paise'), array('action' => 'delete', $paise['Paise']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $paise['Paise']['id']))); ?> </li>
-		<li><?php echo $this->Html->link(__('List Paises'), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Paise'), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Direcciones'), array('controller' => 'direcciones', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Direccione'), array('controller' => 'direcciones', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Editar Paises'), array('action' => 'edit', $paise['Paise']['id'])); ?> </li>
+		<li><?php echo $this->Form->postLink(__('Eliminar Paises'), array('action' => 'delete', $paise['Paise']['id']), array('confirm' => __('Estás seguro que quieres eliminar?', $paise['Paise']['id']))); ?> </li>
+		<li><?php echo $this->Html->link(__('Listar Paises'), array('action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Nuevo País'), array('action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Listar Direcciones'), array('controller' => 'direcciones', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Nueva Dirección'), array('controller' => 'direcciones', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
 <div class="related">
@@ -46,9 +46,9 @@
 			<td><?php echo $direccione['id_region']; ?></td>
 			<td><?php echo $direccione['id_persona']; ?></td>
 			<td class="actions">
-				<?php echo $this->Html->link(__('View'), array('controller' => 'direcciones', 'action' => 'view', $direccione['id'])); ?>
-				<?php echo $this->Html->link(__('Edit'), array('controller' => 'direcciones', 'action' => 'edit', $direccione['id'])); ?>
-				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'direcciones', 'action' => 'delete', $direccione['id']), array('confirm' => __('Are you sure you want to delete # %s?', $direccione['id']))); ?>
+				<?php echo $this->Html->link(__('Ver'), array('controller' => 'direcciones', 'action' => 'view', $direccione['id'])); ?>
+				<?php echo $this->Html->link(__('Editar'), array('controller' => 'direcciones', 'action' => 'edit', $direccione['id'])); ?>
+				<?php echo $this->Form->postLink(__('Eliminar'), array('controller' => 'direcciones', 'action' => 'delete', $direccione['id']), array('confirm' => __('Estás seguro que quieres eliminar?', $direccione['id']))); ?>
 			</td>
 		</tr>
 	<?php endforeach; ?>
@@ -57,7 +57,7 @@
 
 	<div class="actions">
 		<ul>
-			<li><?php echo $this->Html->link(__('New Direccione'), array('controller' => 'direcciones', 'action' => 'add')); ?> </li>
+			<li><?php echo $this->Html->link(__('Nueva Dirección'), array('controller' => 'direcciones', 'action' => 'add')); ?> </li>
 		</ul>
 	</div>
 </div>

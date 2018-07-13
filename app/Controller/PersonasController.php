@@ -15,14 +15,53 @@ class PersonasController extends AppController {
  */
 	public $components = array('Paginator');
 
+	public $uses array('Persona');
 /**
  * index method
  *
  * @return void
  */
 	public function index() {
-		$this->Persona->recursive = 0;
 		$this->set('personas', $this->Paginator->paginate());
+	}
+
+/**
+ * buscador method
+ *
+ * @return void
+ */
+	public function buscador() {
+		if(!empty($this->request->data)){
+
+			$miNombre = $this->request->data['Buscador']['nombre'];
+			$miApellidoPaterno = $this->request->data['Buscador']['apellido_paterno'];
+			$miApellidoMaterno = $this->request->data['Buscador']['apellido_materno'];
+			$miEmail = $this->request->data['Buscador']['email'];
+
+			$misCondiciones = array();
+
+			if(!empty($miNombre)){
+				$misCondiciones['Persona.nombre LIKE'] = "%".$miNombre."%";
+			}
+			if(!empty($miApellidoPaterno)){
+				$misCondiciones['Persona.apellido_paterno LIKE'] = "%".$miApellidoPaterno."%";
+			}
+			if(!empty($miApellidoMaterno)){
+				$misCondiciones['Persona.apellido_materno LIKE'] = "%".$miApellidoMaterno."%";
+			}
+			if(!empty($miEmail)){
+				$misCondiciones['Persona.email LIKE'] = "%".$miNombre."%";
+			}
+
+			if(empty($misCondiciones)){
+				$this->redirect(['controller' => 'personas', 'action' => 'index']);
+			}
+
+			$this->paginate = array('conditions' => $misCondiciones);
+			$this->set('personas', $this->Paginator->paginate());
+		} else {
+			$this->redirect(['controller' => 'personas', 'action' => 'index']);
+		}
 	}
 
 /**

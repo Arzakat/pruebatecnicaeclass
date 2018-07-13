@@ -24,9 +24,9 @@
 			<?php echo $this->Html->link($direccione['Persona']['nombre'], array('controller' => 'personas', 'action' => 'view', $direccione['Persona']['id'])); ?>
 		</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $direccione['Direccione']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $direccione['Direccione']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $direccione['Direccione']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $direccione['Direccione']['id']))); ?>
+			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $direccione['Direccione']['id'])); ?>
+			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $direccione['Direccione']['id'])); ?>
+			<?php echo $this->Form->postLink(__('Eliminar'), array('action' => 'delete', $direccione['Direccione']['id']), array('confirm' => __('Estás seguro que quieres eliminar?', $direccione['Direccione']['id']))); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -49,8 +49,8 @@
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('New Direccione'), array('action' => 'add')); ?></li>
-		<li><?php echo $this->Html->link(__('List Personas'), array('controller' => 'personas', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Persona'), array('controller' => 'personas', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Nueva Dirección'), array('action' => 'add')); ?></li>
+		<li><?php echo $this->Html->link(__('Listar Personas'), array('controller' => 'personas', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Nueva Persona'), array('controller' => 'personas', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

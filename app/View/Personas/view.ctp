@@ -46,16 +46,16 @@
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('Edit Persona'), array('action' => 'edit', $persona['Persona']['id'])); ?> </li>
-		<li><?php echo $this->Form->postLink(__('Delete Persona'), array('action' => 'delete', $persona['Persona']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $persona['Persona']['id']))); ?> </li>
-		<li><?php echo $this->Html->link(__('List Personas'), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Persona'), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Direcciones'), array('controller' => 'direcciones', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Direccione'), array('controller' => 'direcciones', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Telefonos'), array('controller' => 'telefonos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Telefono'), array('controller' => 'telefonos', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Usuarios'), array('controller' => 'usuarios', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Usuario'), array('controller' => 'usuarios', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Editar Persona'), array('action' => 'edit', $persona['Persona']['id'])); ?> </li>
+		<li><?php echo $this->Form->postLink(__('Eliminar Persona'), array('action' => 'delete', $persona['Persona']['id']), array('confirm' => __('Estás seguro que quieres eliminar?', $persona['Persona']['id']))); ?> </li>
+		<li><?php echo $this->Html->link(__('Listar Personas'), array('action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Nueva Persona'), array('action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Listar Direcciones'), array('controller' => 'direcciones', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Nueva Dirección'), array('controller' => 'direcciones', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Listar Teléfonos'), array('controller' => 'telefonos', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Nuevo Teléfono'), array('controller' => 'telefonos', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Listar Usuarios'), array('controller' => 'usuarios', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Nuevo Usuario'), array('controller' => 'usuarios', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
 <div class="related">
@@ -80,9 +80,9 @@
 			<td><?php echo $direccione['id_region']; ?></td>
 			<td><?php echo $direccione['id_persona']; ?></td>
 			<td class="actions">
-				<?php echo $this->Html->link(__('View'), array('controller' => 'direcciones', 'action' => 'view', $direccione['id'])); ?>
-				<?php echo $this->Html->link(__('Edit'), array('controller' => 'direcciones', 'action' => 'edit', $direccione['id'])); ?>
-				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'direcciones', 'action' => 'delete', $direccione['id']), array('confirm' => __('Are you sure you want to delete # %s?', $direccione['id']))); ?>
+				<?php echo $this->Html->link(__('Ver'), array('controller' => 'direcciones', 'action' => 'view', $direccione['id'])); ?>
+				<?php echo $this->Html->link(__('Editar'), array('controller' => 'direcciones', 'action' => 'edit', $direccione['id'])); ?>
+				<?php echo $this->Form->postLink(__('Eliminar'), array('controller' => 'direcciones', 'action' => 'delete', $direccione['id']), array('confirm' => __('Estás seguro que quieres eliminar?', $direccione['id']))); ?>
 			</td>
 		</tr>
 	<?php endforeach; ?>
@@ -91,7 +91,7 @@
 
 	<div class="actions">
 		<ul>
-			<li><?php echo $this->Html->link(__('New Direccione'), array('controller' => 'direcciones', 'action' => 'add')); ?> </li>
+			<li><?php echo $this->Html->link(__('Nueva Dirección'), array('controller' => 'direcciones', 'action' => 'add')); ?> </li>
 		</ul>
 	</div>
 </div>
@@ -117,9 +117,9 @@
 			<td><?php echo $telefono['id_tipo_telefono']; ?></td>
 			<td><?php echo $telefono['id_persona']; ?></td>
 			<td class="actions">
-				<?php echo $this->Html->link(__('View'), array('controller' => 'telefonos', 'action' => 'view', $telefono['id'])); ?>
-				<?php echo $this->Html->link(__('Edit'), array('controller' => 'telefonos', 'action' => 'edit', $telefono['id'])); ?>
-				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'telefonos', 'action' => 'delete', $telefono['id']), array('confirm' => __('Are you sure you want to delete # %s?', $telefono['id']))); ?>
+				<?php echo $this->Html->link(__('Ver'), array('controller' => 'telefonos', 'action' => 'view', $telefono['id'])); ?>
+				<?php echo $this->Html->link(__('Editar'), array('controller' => 'telefonos', 'action' => 'edit', $telefono['id'])); ?>
+				<?php echo $this->Form->postLink(__('Eliminar'), array('controller' => 'telefonos', 'action' => 'delete', $telefono['id']), array('confirm' => __('Estás seguro que quieres eliminar?', $telefono['id']))); ?>
 			</td>
 		</tr>
 	<?php endforeach; ?>
@@ -128,7 +128,7 @@
 
 	<div class="actions">
 		<ul>
-			<li><?php echo $this->Html->link(__('New Telefono'), array('controller' => 'telefonos', 'action' => 'add')); ?> </li>
+			<li><?php echo $this->Html->link(__('Nuevo Teléfono'), array('controller' => 'telefonos', 'action' => 'add')); ?> </li>
 		</ul>
 	</div>
 </div>
@@ -150,9 +150,9 @@
 			<td><?php echo $usuario['password']; ?></td>
 			<td><?php echo $usuario['id_persona']; ?></td>
 			<td class="actions">
-				<?php echo $this->Html->link(__('View'), array('controller' => 'usuarios', 'action' => 'view', $usuario['id'])); ?>
-				<?php echo $this->Html->link(__('Edit'), array('controller' => 'usuarios', 'action' => 'edit', $usuario['id'])); ?>
-				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'usuarios', 'action' => 'delete', $usuario['id']), array('confirm' => __('Are you sure you want to delete # %s?', $usuario['id']))); ?>
+				<?php echo $this->Html->link(__('Ver'), array('controller' => 'usuarios', 'action' => 'view', $usuario['id'])); ?>
+				<?php echo $this->Html->link(__('Editar'), array('controller' => 'usuarios', 'action' => 'edit', $usuario['id'])); ?>
+				<?php echo $this->Form->postLink(__('Eliminar'), array('controller' => 'usuarios', 'action' => 'delete', $usuario['id']), array('confirm' => __('Estás seguro que quieres eliminar?', $usuario['id']))); ?>
 			</td>
 		</tr>
 	<?php endforeach; ?>
@@ -161,7 +161,7 @@
 
 	<div class="actions">
 		<ul>
-			<li><?php echo $this->Html->link(__('New Usuario'), array('controller' => 'usuarios', 'action' => 'add')); ?> </li>
+			<li><?php echo $this->Html->link(__('Nuevo Usuario'), array('controller' => 'usuarios', 'action' => 'add')); ?> </li>
 		</ul>
 	</div>
 </div>

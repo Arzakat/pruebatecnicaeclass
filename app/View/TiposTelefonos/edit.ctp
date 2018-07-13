@@ -1,7 +1,7 @@
 <div class="tiposTelefonos form">
 <?php echo $this->Form->create('TiposTelefono'); ?>
 	<fieldset>
-		<legend><?php echo __('Edit Tipos Telefono'); ?></legend>
+		<legend><?php echo __('Editar Tipos Teléfono'); ?></legend>
 	<?php
 		echo $this->Form->input('id');
 		echo $this->Form->input('nombre');
@@ -13,9 +13,9 @@
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
 
-		<li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('TiposTelefono.id')), array('confirm' => __('Are you sure you want to delete # %s?', $this->Form->value('TiposTelefono.id')))); ?></li>
-		<li><?php echo $this->Html->link(__('List Tipos Telefonos'), array('action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('List Telefonos'), array('controller' => 'telefonos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Telefono'), array('controller' => 'telefonos', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Form->postLink(__('Eliminar'), array('action' => 'delete', $this->Form->value('TiposTelefono.id')), array('confirm' => __('Estás seguro que quieres eliminar?', $this->Form->value('TiposTelefono.id')))); ?></li>
+		<li><?php echo $this->Html->link(__('Listar Tipos Teléfono'), array('action' => 'index')); ?></li>
+		<li><?php echo $this->Html->link(__('Listar Teléfonos'), array('controller' => 'telefonos', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Nuevvo Teléfono'), array('controller' => 'telefonos', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

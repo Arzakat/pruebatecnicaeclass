@@ -1,7 +1,7 @@
 <div class="usuariosPerfiles form">
 <?php echo $this->Form->create('UsuariosPerfile'); ?>
 	<fieldset>
-		<legend><?php echo __('Edit Usuarios Perfile'); ?></legend>
+		<legend><?php echo __('Editar Usuarios Perfiles'); ?></legend>
 	<?php
 		echo $this->Form->input('id');
 		echo $this->Form->input('id_usuario');
@@ -14,11 +14,11 @@
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
 
-		<li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('UsuariosPerfile.id')), array('confirm' => __('Are you sure you want to delete # %s?', $this->Form->value('UsuariosPerfile.id')))); ?></li>
-		<li><?php echo $this->Html->link(__('List Usuarios Perfiles'), array('action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('List Usuarios'), array('controller' => 'usuarios', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Usuario'), array('controller' => 'usuarios', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Perfiles'), array('controller' => 'perfiles', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Perfile'), array('controller' => 'perfiles', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Form->postLink(__('Eliminar'), array('action' => 'delete', $this->Form->value('UsuariosPerfile.id')), array('confirm' => __('Estás seguro que quieres eliminar?', $this->Form->value('UsuariosPerfile.id')))); ?></li>
+		<li><?php echo $this->Html->link(__('Listar Usuarios Perfiles'), array('action' => 'index')); ?></li>
+		<li><?php echo $this->Html->link(__('Listar Usuarios'), array('controller' => 'usuarios', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Nuevo Usuario'), array('controller' => 'usuarios', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Listar Perfiles'), array('controller' => 'perfiles', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Nuevo Perfiles'), array('controller' => 'perfiles', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

@@ -16,9 +16,9 @@
 		<td><?php echo h($usuariosPerfile['UsuariosPerfile']['id_usuario']); ?>&nbsp;</td>
 		<td><?php echo h($usuariosPerfile['UsuariosPerfile']['id_perfil']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $usuariosPerfile['UsuariosPerfile']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $usuariosPerfile['UsuariosPerfile']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $usuariosPerfile['UsuariosPerfile']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $usuariosPerfile['UsuariosPerfile']['id']))); ?>
+			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $usuariosPerfile['UsuariosPerfile']['id'])); ?>
+			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $usuariosPerfile['UsuariosPerfile']['id'])); ?>
+			<?php echo $this->Form->postLink(__('Eliminar'), array('action' => 'delete', $usuariosPerfile['UsuariosPerfile']['id']), array('confirm' => __('Estás seguro que quieres eliminar?', $usuariosPerfile['UsuariosPerfile']['id']))); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -41,10 +41,10 @@
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('New Usuarios Perfile'), array('action' => 'add')); ?></li>
-		<li><?php echo $this->Html->link(__('List Usuarios'), array('controller' => 'usuarios', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Usuario'), array('controller' => 'usuarios', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Perfiles'), array('controller' => 'perfiles', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Perfile'), array('controller' => 'perfiles', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Nuevo Usuarios Perfiles'), array('action' => 'add')); ?></li>
+		<li><?php echo $this->Html->link(__('Listar Usuarios'), array('controller' => 'usuarios', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Nuevo Usuario'), array('controller' => 'usuarios', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Listar Perfiles'), array('controller' => 'perfiles', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Nuevo Perfiles'), array('controller' => 'perfiles', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

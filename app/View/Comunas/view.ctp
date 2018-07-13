@@ -16,11 +16,11 @@
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('Edit Comuna'), array('action' => 'edit', $comuna['Comuna']['id'])); ?> </li>
-		<li><?php echo $this->Form->postLink(__('Delete Comuna'), array('action' => 'delete', $comuna['Comuna']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $comuna['Comuna']['id']))); ?> </li>
-		<li><?php echo $this->Html->link(__('List Comunas'), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Comuna'), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Regiones'), array('controller' => 'regiones', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Regione'), array('controller' => 'regiones', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Editar Comuna'), array('action' => 'edit', $comuna['Comuna']['id'])); ?> </li>
+		<li><?php echo $this->Form->postLink(__('Eliminar Comuna'), array('action' => 'delete', $comuna['Comuna']['id']), array('confirm' => __('Estás seguro que quieres eliminar?', $comuna['Comuna']['id']))); ?> </li>
+		<li><?php echo $this->Html->link(__('Listar Comunas'), array('action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Nueva Comuna'), array('action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Listar Regiones'), array('controller' => 'regiones', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Nueva Región'), array('controller' => 'regiones', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

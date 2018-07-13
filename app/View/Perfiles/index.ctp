@@ -14,9 +14,9 @@
 		<td><?php echo h($perfile['Perfile']['id']); ?>&nbsp;</td>
 		<td><?php echo h($perfile['Perfile']['nombre']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $perfile['Perfile']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $perfile['Perfile']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $perfile['Perfile']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $perfile['Perfile']['id']))); ?>
+			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $perfile['Perfile']['id'])); ?>
+			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $perfile['Perfile']['id'])); ?>
+			<?php echo $this->Form->postLink(__('Eliminar'), array('action' => 'delete', $perfile['Perfile']['id']), array('confirm' => __('Estás seguro que quieres eliminar?', $perfile['Perfile']['id']))); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -39,8 +39,8 @@
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('New Perfile'), array('action' => 'add')); ?></li>
-		<li><?php echo $this->Html->link(__('List Usuarios Perfiles'), array('controller' => 'usuarios_perfiles', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Usuarios Perfile'), array('controller' => 'usuarios_perfiles', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Nuevo Perfil'), array('action' => 'add')); ?></li>
+		<li><?php echo $this->Html->link(__('Listar Usuarios Perfiles'), array('controller' => 'usuarios_perfiles', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Nuevo Usuarios Perfiles'), array('controller' => 'usuarios_perfiles', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

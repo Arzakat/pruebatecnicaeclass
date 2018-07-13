@@ -15,6 +15,7 @@ class Persona extends AppModel {
  * @var string
  */
 	public $displayField = 'nombre';
+	public $recursive = 0;
 
 /**
  * Validation rules

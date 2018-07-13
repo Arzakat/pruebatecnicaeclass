@@ -16,12 +16,12 @@
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('Edit Perfile'), array('action' => 'edit', $perfile['Perfile']['id'])); ?> </li>
-		<li><?php echo $this->Form->postLink(__('Delete Perfile'), array('action' => 'delete', $perfile['Perfile']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $perfile['Perfile']['id']))); ?> </li>
-		<li><?php echo $this->Html->link(__('List Perfiles'), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Perfile'), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Usuarios Perfiles'), array('controller' => 'usuarios_perfiles', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Usuarios Perfile'), array('controller' => 'usuarios_perfiles', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Editar Perfiles'), array('action' => 'edit', $perfile['Perfile']['id'])); ?> </li>
+		<li><?php echo $this->Form->postLink(__('Eliminar Perfil'), array('action' => 'delete', $perfile['Perfile']['id']), array('confirm' => __('Estás seguro que quieres eliminar?', $perfile['Perfile']['id']))); ?> </li>
+		<li><?php echo $this->Html->link(__('Listar Perfiles'), array('action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Nuevo Perfil'), array('action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Listar Usuarios Perfiles'), array('controller' => 'usuarios_perfiles', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Nuevo Usuarios Perfil'), array('controller' => 'usuarios_perfiles', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
 <div class="related">
@@ -40,9 +40,9 @@
 			<td><?php echo $usuariosPerfile['id_usuario']; ?></td>
 			<td><?php echo $usuariosPerfile['id_perfil']; ?></td>
 			<td class="actions">
-				<?php echo $this->Html->link(__('View'), array('controller' => 'usuarios_perfiles', 'action' => 'view', $usuariosPerfile['id'])); ?>
-				<?php echo $this->Html->link(__('Edit'), array('controller' => 'usuarios_perfiles', 'action' => 'edit', $usuariosPerfile['id'])); ?>
-				<?php echo $this->Form->postLink(__('Delete'), array('controller' => 'usuarios_perfiles', 'action' => 'delete', $usuariosPerfile['id']), array('confirm' => __('Are you sure you want to delete # %s?', $usuariosPerfile['id']))); ?>
+				<?php echo $this->Html->link(__('Ver'), array('controller' => 'usuarios_perfiles', 'action' => 'view', $usuariosPerfile['id'])); ?>
+				<?php echo $this->Html->link(__('Editar'), array('controller' => 'usuarios_perfiles', 'action' => 'edit', $usuariosPerfile['id'])); ?>
+				<?php echo $this->Form->postLink(__('Eliminar'), array('controller' => 'usuarios_perfiles', 'action' => 'delete', $usuariosPerfile['id']), array('confirm' => __('Estás seguro que quieres eliminar?', $usuariosPerfile['id']))); ?>
 			</td>
 		</tr>
 	<?php endforeach; ?>
@@ -51,7 +51,7 @@
 
 	<div class="actions">
 		<ul>
-			<li><?php echo $this->Html->link(__('New Usuarios Perfile'), array('controller' => 'usuarios_perfiles', 'action' => 'add')); ?> </li>
+			<li><?php echo $this->Html->link(__('Nuevo Usuarios Perfiles'), array('controller' => 'usuarios_perfiles', 'action' => 'add')); ?> </li>
 		</ul>
 	</div>
 </div>

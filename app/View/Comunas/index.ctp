@@ -16,9 +16,9 @@
 		</td>
 		<td><?php echo h($comuna['Comuna']['nombre']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $comuna['Comuna']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $comuna['Comuna']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $comuna['Comuna']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $comuna['Comuna']['id']))); ?>
+			<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $comuna['Comuna']['id'])); ?>
+			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $comuna['Comuna']['id'])); ?>
+			<?php echo $this->Form->postLink(__('Eliminar'), array('action' => 'delete', $comuna['Comuna']['id']), array('confirm' => __('Estás seguro que quieres eliminar?', $comuna['Comuna']['id']))); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -41,8 +41,8 @@
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('New Comuna'), array('action' => 'add')); ?></li>
-		<li><?php echo $this->Html->link(__('List Regiones'), array('controller' => 'regiones', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Regione'), array('controller' => 'regiones', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Nueva Comuna'), array('action' => 'add')); ?></li>
+		<li><?php echo $this->Html->link(__('Listar Regiones'), array('controller' => 'regiones', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Nueva Región'), array('controller' => 'regiones', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

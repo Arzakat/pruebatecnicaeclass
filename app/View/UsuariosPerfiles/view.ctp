@@ -1,5 +1,5 @@
 <div class="usuariosPerfiles view">
-<h2><?php echo __('Usuarios Perfile'); ?></h2>
+<h2><?php echo __('Usuarios Perfiles'); ?></h2>
 	<dl>
 		<dt><?php echo __('Id'); ?></dt>
 		<dd>
@@ -21,14 +21,14 @@
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('Edit Usuarios Perfile'), array('action' => 'edit', $usuariosPerfile['UsuariosPerfile']['id'])); ?> </li>
-		<li><?php echo $this->Form->postLink(__('Delete Usuarios Perfile'), array('action' => 'delete', $usuariosPerfile['UsuariosPerfile']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $usuariosPerfile['UsuariosPerfile']['id']))); ?> </li>
-		<li><?php echo $this->Html->link(__('List Usuarios Perfiles'), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Usuarios Perfile'), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Usuarios'), array('controller' => 'usuarios', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Usuario'), array('controller' => 'usuarios', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Perfiles'), array('controller' => 'perfiles', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Perfile'), array('controller' => 'perfiles', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Editar Usuarios Perfiles'), array('action' => 'edit', $usuariosPerfile['UsuariosPerfile']['id'])); ?> </li>
+		<li><?php echo $this->Form->postLink(__('Eliminar Usuarios Perfiles'), array('action' => 'delete', $usuariosPerfile['UsuariosPerfile']['id']), array('confirm' => __('Estás seguro que quieres eliminar?', $usuariosPerfile['UsuariosPerfile']['id']))); ?> </li>
+		<li><?php echo $this->Html->link(__('Listar Usuarios Perfiles'), array('action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Nuevo Usuarios Perfiles'), array('action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Listar Usuarios'), array('controller' => 'usuarios', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Nuevo Usuario'), array('controller' => 'usuarios', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Listar Perfiles'), array('controller' => 'perfiles', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Nuevo Perfiles'), array('controller' => 'perfiles', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
 	<div class="related">
@@ -55,7 +55,7 @@
 	<?php endif; ?>
 		<div class="actions">
 			<ul>
-				<li><?php echo $this->Html->link(__('Edit Usuario'), array('controller' => 'usuarios', 'action' => 'edit', $usuariosPerfile['usuario']['id'])); ?></li>
+				<li><?php echo $this->Html->link(__('Editar Usuario'), array('controller' => 'usuarios', 'action' => 'edit', $usuariosPerfile['usuario']['id'])); ?></li>
 			</ul>
 		</div>
 	</div>
@@ -75,7 +75,7 @@
 	<?php endif; ?>
 		<div class="actions">
 			<ul>
-				<li><?php echo $this->Html->link(__('Edit Perfile'), array('controller' => 'perfiles', 'action' => 'edit', $usuariosPerfile['Perfile']['id'])); ?></li>
+				<li><?php echo $this->Html->link(__('Editar Perfiles'), array('controller' => 'perfiles', 'action' => 'edit', $usuariosPerfile['Perfile']['id'])); ?></li>
 			</ul>
 		</div>
 	</div>
