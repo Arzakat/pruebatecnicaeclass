@@ -49,10 +49,10 @@ class PaisesController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Paise->create();
 			if ($this->Paise->save($this->request->data)) {
-				$this->Flash->success(__('The paise has been saved.'));
+				$this->Flash->success(__('El país ha sido guardado.'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Flash->error(__('The paise could not be saved. Please, try again.'));
+				$this->Flash->error(__('El país no pudo ser guardado, por favor intente nuevamente.'));
 			}
 		}
 	}
@@ -70,10 +70,10 @@ class PaisesController extends AppController {
 		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Paise->save($this->request->data)) {
-				$this->Flash->success(__('The paise has been saved.'));
+				$this->Flash->success(__('El país se ha guardado.'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Flash->error(__('The paise could not be saved. Please, try again.'));
+				$this->Flash->error(__('El país no pudo ser guardado, por favor intente nuevamente.'));
 			}
 		} else {
 			$options = array('conditions' => array('Paise.' . $this->Paise->primaryKey => $id));
@@ -95,9 +95,9 @@ class PaisesController extends AppController {
 		}
 		$this->request->allowMethod('post', 'delete');
 		if ($this->Paise->delete()) {
-			$this->Flash->success(__('The paise has been deleted.'));
+			$this->Flash->success(__('El país ha sido eliminado'));
 		} else {
-			$this->Flash->error(__('The paise could not be deleted. Please, try again.'));
+			$this->Flash->error(__('El país no pudo ser eliminado, por favor intente nuevamente.'));
 		}
 		return $this->redirect(array('action' => 'index'));
 	}

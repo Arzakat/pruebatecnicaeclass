@@ -49,10 +49,10 @@ class PersonasController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Persona->create();
 			if ($this->Persona->save($this->request->data)) {
-				$this->Flash->success(__('The persona has been saved.'));
+				$this->Flash->success(__('La persona ha sido guardada.'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Flash->error(__('The persona could not be saved. Please, try again.'));
+				$this->Flash->error(__('La persona no ha podido ser guardada, por favor intente nuevamente'));
 			}
 		}
 	}
@@ -70,10 +70,10 @@ class PersonasController extends AppController {
 		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Persona->save($this->request->data)) {
-				$this->Flash->success(__('The persona has been saved.'));
+				$this->Flash->success(__('La persona ha sido guardada.'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Flash->error(__('The persona could not be saved. Please, try again.'));
+				$this->Flash->error(__('la persona no ha podido ser guardada, por favor intente nuevamente.'));
 			}
 		} else {
 			$options = array('conditions' => array('Persona.' . $this->Persona->primaryKey => $id));
@@ -95,9 +95,9 @@ class PersonasController extends AppController {
 		}
 		$this->request->allowMethod('post', 'delete');
 		if ($this->Persona->delete()) {
-			$this->Flash->success(__('The persona has been deleted.'));
+			$this->Flash->success(__('La persona ha sido eliminada.'));
 		} else {
-			$this->Flash->error(__('The persona could not be deleted. Please, try again.'));
+			$this->Flash->error(__('La persona no ha podido ser eliminada, por favor intente nuevamente.'));
 		}
 		return $this->redirect(array('action' => 'index'));
 	}

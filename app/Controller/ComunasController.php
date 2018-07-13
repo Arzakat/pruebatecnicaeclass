@@ -49,10 +49,10 @@ class ComunasController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Comuna->create();
 			if ($this->Comuna->save($this->request->data)) {
-				$this->Flash->success(__('The comuna has been saved.'));
+				$this->Flash->success(__('La comuna se ha guardado correctamente.'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Flash->error(__('The comuna could not be saved. Please, try again.'));
+				$this->Flash->error(__('La comuna no pudo ser guardada, por favor intente nuevamente.'));
 			}
 		}
 		$regiones = $this->Comuna->Regione->find('list');
@@ -72,10 +72,10 @@ class ComunasController extends AppController {
 		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Comuna->save($this->request->data)) {
-				$this->Flash->success(__('The comuna has been saved.'));
+				$this->Flash->success(__('La comuna se ha guardado correctamente.'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Flash->error(__('The comuna could not be saved. Please, try again.'));
+				$this->Flash->error(__('La comuna no pudo ser guardada, por favor intente nuevamente.'));
 			}
 		} else {
 			$options = array('conditions' => array('Comuna.' . $this->Comuna->primaryKey => $id));
@@ -99,9 +99,9 @@ class ComunasController extends AppController {
 		}
 		$this->request->allowMethod('post', 'delete');
 		if ($this->Comuna->delete()) {
-			$this->Flash->success(__('The comuna has been deleted.'));
+			$this->Flash->success(__('La comuna se ha eliminado correctamente.'));
 		} else {
-			$this->Flash->error(__('The comuna could not be deleted. Please, try again.'));
+			$this->Flash->error(__('La comuna no pudo ser eliminada, por favor intente nuevamente..'));
 		}
 		return $this->redirect(array('action' => 'index'));
 	}

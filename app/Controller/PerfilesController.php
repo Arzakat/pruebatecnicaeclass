@@ -49,10 +49,10 @@ class PerfilesController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Perfile->create();
 			if ($this->Perfile->save($this->request->data)) {
-				$this->Flash->success(__('The perfile has been saved.'));
+				$this->Flash->success(__('El perfil ha sido guardado.'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Flash->error(__('The perfile could not be saved. Please, try again.'));
+				$this->Flash->error(__('El país no se ha podido guardar, por favor intente nuevamente.'));
 			}
 		}
 	}
@@ -70,10 +70,10 @@ class PerfilesController extends AppController {
 		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Perfile->save($this->request->data)) {
-				$this->Flash->success(__('The perfile has been saved.'));
+				$this->Flash->success(__('El perfil ha sido guardado.'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Flash->error(__('The perfile could not be saved. Please, try again.'));
+				$this->Flash->error(__('El perfil no ha podido ser guardado, por favor intente nuevamente.'));
 			}
 		} else {
 			$options = array('conditions' => array('Perfile.' . $this->Perfile->primaryKey => $id));
@@ -95,9 +95,9 @@ class PerfilesController extends AppController {
 		}
 		$this->request->allowMethod('post', 'delete');
 		if ($this->Perfile->delete()) {
-			$this->Flash->success(__('The perfile has been deleted.'));
+			$this->Flash->success(__('El perfil ha sido eliminado.'));
 		} else {
-			$this->Flash->error(__('The perfile could not be deleted. Please, try again.'));
+			$this->Flash->error(__('El perfil no ha podido ser eliminado, por favor intente nuevamente.'));
 		}
 		return $this->redirect(array('action' => 'index'));
 	}

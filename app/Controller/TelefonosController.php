@@ -49,10 +49,10 @@ class TelefonosController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Telefono->create();
 			if ($this->Telefono->save($this->request->data)) {
-				$this->Flash->success(__('The telefono has been saved.'));
+				$this->Flash->success(__('El teléfono se ha guardado.'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Flash->error(__('The telefono could not be saved. Please, try again.'));
+				$this->Flash->error(__('El teléfono no pudo ser guardado, por favor intente nuevamente'));
 			}
 		}
 	}
@@ -70,10 +70,10 @@ class TelefonosController extends AppController {
 		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Telefono->save($this->request->data)) {
-				$this->Flash->success(__('The telefono has been saved.'));
+				$this->Flash->success(__('El teléfono se ha guardado.'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Flash->error(__('The telefono could not be saved. Please, try again.'));
+				$this->Flash->error(__('El teléfono no pudo ser guardado, por favor intente nuevamente'));
 			}
 		} else {
 			$options = array('conditions' => array('Telefono.' . $this->Telefono->primaryKey => $id));
@@ -95,9 +95,9 @@ class TelefonosController extends AppController {
 		}
 		$this->request->allowMethod('post', 'delete');
 		if ($this->Telefono->delete()) {
-			$this->Flash->success(__('The telefono has been deleted.'));
+			$this->Flash->success(__('El teléfono se ha eliminado.'));
 		} else {
-			$this->Flash->error(__('The telefono could not be deleted. Please, try again.'));
+			$this->Flash->error(__('El teléfono no pudo ser eliminado, por favor intente nuevamente.'));
 		}
 		return $this->redirect(array('action' => 'index'));
 	}

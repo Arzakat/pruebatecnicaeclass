@@ -49,10 +49,10 @@ class UsuariosPerfilesController extends AppController {
 		if ($this->request->is('post')) {
 			$this->UsuariosPerfile->create();
 			if ($this->UsuariosPerfile->save($this->request->data)) {
-				$this->Flash->success(__('The usuarios perfile has been saved.'));
+				$this->Flash->success(__('El perfil de usuario ha sido guardado.'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Flash->error(__('The usuarios perfile could not be saved. Please, try again.'));
+				$this->Flash->error(__('El perfil de usuario no ha podido ser guardado, por favor intente nuevamente.'));
 			}
 		}
 	}
@@ -70,10 +70,10 @@ class UsuariosPerfilesController extends AppController {
 		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->UsuariosPerfile->save($this->request->data)) {
-				$this->Flash->success(__('The usuarios perfile has been saved.'));
+				$this->Flash->success(__('El perfil de usuario ha sido guardado.'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Flash->error(__('The usuarios perfile could not be saved. Please, try again.'));
+				$this->Flash->error(__('El perfil de usuario no ha podido ser guardado, por favor intente nuevamente.'));
 			}
 		} else {
 			$options = array('conditions' => array('UsuariosPerfile.' . $this->UsuariosPerfile->primaryKey => $id));
@@ -95,9 +95,9 @@ class UsuariosPerfilesController extends AppController {
 		}
 		$this->request->allowMethod('post', 'delete');
 		if ($this->UsuariosPerfile->delete()) {
-			$this->Flash->success(__('The usuarios perfile has been deleted.'));
+			$this->Flash->success(__('El perfil de usuario ha sido elimianndo.'));
 		} else {
-			$this->Flash->error(__('The usuarios perfile could not be deleted. Please, try again.'));
+			$this->Flash->error(__('El perfil de usuario no ha podido ser eliminado, por favor intente nuevamente.'));
 		}
 		return $this->redirect(array('action' => 'index'));
 	}

@@ -34,7 +34,7 @@ class DireccionesController extends AppController {
  */
 	public function view($id = null) {
 		if (!$this->Direccione->exists($id)) {
-			throw new NotFoundException(__('Invalid direccione'));
+			throw new NotFoundException(__('Invalid direcciones'));
 		}
 		$options = array('conditions' => array('Direccione.' . $this->Direccione->primaryKey => $id));
 		$this->set('direccione', $this->Direccione->find('first', $options));
@@ -49,10 +49,10 @@ class DireccionesController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Direccione->create();
 			if ($this->Direccione->save($this->request->data)) {
-				$this->Flash->success(__('The direccione has been saved.'));
+				$this->Flash->success(__('La dirección se ha guardado.'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Flash->error(__('The direccione could not be saved. Please, try again.'));
+				$this->Flash->error(__('La dirección no pudo ser guardada, por favor intente nuevamente.'));
 			}
 		}
 		$personas = $this->Direccione->Persona->find('list');
@@ -72,10 +72,10 @@ class DireccionesController extends AppController {
 		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Direccione->save($this->request->data)) {
-				$this->Flash->success(__('The direccione has been saved.'));
+				$this->Flash->success(__('La dirección se ha guardado.'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Flash->error(__('The direccione could not be saved. Please, try again.'));
+				$this->Flash->error(__('La dirección no pudo ser guardada, por favor intente nuevamente.'));
 			}
 		} else {
 			$options = array('conditions' => array('Direccione.' . $this->Direccione->primaryKey => $id));
@@ -99,9 +99,9 @@ class DireccionesController extends AppController {
 		}
 		$this->request->allowMethod('post', 'delete');
 		if ($this->Direccione->delete()) {
-			$this->Flash->success(__('The direccione has been deleted.'));
+			$this->Flash->success(__('La dirección se ha borrado correctamente'));
 		} else {
-			$this->Flash->error(__('The direccione could not be deleted. Please, try again.'));
+			$this->Flash->error(__('TLa dirección no pudo ser eliminada, por favor intente nuevamente.'));
 		}
 		return $this->redirect(array('action' => 'index'));
 	}
