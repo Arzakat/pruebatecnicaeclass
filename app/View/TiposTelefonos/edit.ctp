@@ -16,6 +16,6 @@
 		<li><?php echo $this->Form->postLink(__('Eliminar'), array('action' => 'delete', $this->Form->value('TiposTelefono.id')), array('confirm' => __('Estás seguro que quieres eliminar?', $this->Form->value('TiposTelefono.id')))); ?></li>
 		<li><?php echo $this->Html->link(__('Listar Tipos Teléfono'), array('action' => 'index')); ?></li>
 		<li><?php echo $this->Html->link(__('Listar Teléfonos'), array('controller' => 'telefonos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('Nuevvo Teléfono'), array('controller' => 'telefonos', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Nuevo Teléfono'), array('controller' => 'telefonos', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

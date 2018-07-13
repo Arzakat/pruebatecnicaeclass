@@ -1,7 +1,7 @@
 <div class="personas form">
 <?php echo $this->Form->create('Persona'); ?>
 	<fieldset>
-		<legend><?php echo __('Add Persona'); ?></legend>
+		<legend><?php echo __('Añadir Persona'); ?></legend>
 	<?php
 		echo $this->Form->input('nombre');
 		echo $this->Form->input('id_documento');
@@ -18,12 +18,12 @@
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
 
-		<li><?php echo $this->Html->link(__('List Personas'), array('action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('List Direcciones'), array('controller' => 'direcciones', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Direccione'), array('controller' => 'direcciones', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Telefonos'), array('controller' => 'telefonos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Telefono'), array('controller' => 'telefonos', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Usuarios'), array('controller' => 'usuarios', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Usuario'), array('controller' => 'usuarios', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Listar Personas'), array('action' => 'index')); ?></li>
+		<li><?php echo $this->Html->link(__('Listar Direcciones'), array('controller' => 'direcciones', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Nueva Dirección'), array('controller' => 'direcciones', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Listar Telefonos'), array('controller' => 'telefonos', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Nuevo Teléfono'), array('controller' => 'telefonos', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Listar Usuarios'), array('controller' => 'usuarios', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Nuevo Usuario'), array('controller' => 'usuarios', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

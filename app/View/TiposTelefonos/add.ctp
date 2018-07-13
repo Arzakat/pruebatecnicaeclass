@@ -12,8 +12,8 @@
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
 
-		<li><?php echo $this->Html->link(__('List Tipos Telefonos'), array('action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('List Telefonos'), array('controller' => 'telefonos', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Telefono'), array('controller' => 'telefonos', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Listar Tipos Telefonos'), array('action' => 'index')); ?></li>
+		<li><?php echo $this->Html->link(__('Listar Telefonos'), array('controller' => 'telefonos', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Nuevo Telefono'), array('controller' => 'telefonos', 'action' => 'add')); ?> </li>
 	</ul>
 </div>
