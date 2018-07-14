@@ -27,7 +27,7 @@
 					<td><?php echo h($direccion['Paise']['nombre']); ?>&nbsp;</td>
 					<td class="actions">
 						<?php echo $this->Html->link(__('Editar'), array('controller' =>'direcciones', 'action' => 'edit', $direccion['id'], $direccion['id_persona'])); ?>
-						<?php echo $this->Form->postLink(_('Delete'), array('controller' =>'direcciones', 'action' => 'delete', $direccion['id'], $direccion['id_persona'] ), array('confirm' => __('Estás seguro que deseas eliminar la direccion %s?', $direccion['direccion']))); ?>
+						<?php echo $this->Form->postLink(__('Eliminar'), array('controller' =>'direcciones', 'action' => 'delete', $direccion['id'], $direccion['id_persona'] ), array('confirm' => __('Estás seguro que deseas eliminar la direccion %s?', $direccion['direccion']))); ?>
 					</td>
 				</tr>
 			<?php 
@@ -35,12 +35,4 @@
 		endif;?>
 	</tbody>
 	</table>
-</div>
-<div class="actions">
-	<h3><?php echo __('Acciones'); ?></h3>
-	<ul>
-		<li>
-			<?php echo $this->Html->link(__('Agregar Usuario'), array('controller' => 'usuarios', 'action' => 'add', $persona['Persona']['id'])); ?>
-		</li>
-	</ul>
 </div>

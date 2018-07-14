@@ -94,8 +94,51 @@ class PersonasController extends AppController {
 		$this->set('tipos_documentos', $tipos_documentos);
 
 		if ($this->request->is('post')) {
-			$this->Persona->create();
-			if ($this->Persona->save($this->request->data)) {
+			$errores = 0;
+
+
+			$rutNuevo = $this->request->data['Persona']['numero_documento'];
+
+			switch($this->request->data['Persona']['id_documento']){
+				// Cualquier otro
+				default:
+					if(!is_numeric($rutNuevo)){
+						$this->Flash->error(__('Numero de documento invalido.'));
+						$errores++;
+					}
+					break;
+				// Es rut
+				case 3:
+					if(is_numeric($rutNuevo)){
+						if(!strlen($rutNuevo) == 7 || !strlen($rutNuevo) == 8){
+							$this->Flash->error(__('Numero de documento invalido.'));
+							$errores++;
+						}
+					} else {
+						$this->Flash->error(__('Numero de documento invalido.'));
+						$errores++;
+					}
+					break;
+			}
+
+			// Es rut
+			if($this->request->data['Persona']['id_documento'] == 3){
+				$rutNuevo = $this->request->data['Persona']['numero_documento'];
+				if(is_numeric($rutNuevo)){
+					if(!strlen($rutNuevo) == 7 || !strlen($rutNuevo) == 8){
+						$this->Flash->error(__('Numero de documento invalido.'));
+						$errores++;
+					}
+				} else {
+					$this->Flash->error(__('Numero de documento invalido.'));
+					$errores++;
+				}
+			}
+
+			if(!$errores){
+				$this->Persona->create();
+			}
+			if (!$errores && $this->Persona->save($this->request->data)) {
 				$this->Flash->success(__('La persona ha sido guardada.'));
 				return $this->redirect(array('action' => 'index'));
 			} else {

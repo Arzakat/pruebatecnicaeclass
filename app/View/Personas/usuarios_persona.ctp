@@ -33,12 +33,3 @@
 	</tbody>
 	</table>
 </div>
-<div class="actions">
-	<h3><?php echo __('Acciones'); ?></h3>
-	<ul>
-		<li>
-			<?php echo $this->Html->link(__('Agregar Usuario'), array('controller' => 'usuarios', 'action' => 'add', $persona['Persona']['id'])); ?>
-		</li>
-		</li>
-	</ul>
-</div>
