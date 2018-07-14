@@ -64,7 +64,7 @@ class Persona extends AppModel {
 	public $hasMany = array(
 		'Direccione' => array(
 			'className' => 'Direccione',
-			'foreignKey' => 'id',
+			'foreignKey' => 'id_persona',
 			'dependent' => false,
 			'conditions' => '',
 			'fields' => '',

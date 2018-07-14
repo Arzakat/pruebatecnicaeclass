@@ -45,7 +45,7 @@ class DireccionesController extends AppController {
  *
  * @return void
  */
-	public function add() {
+	public function add($idPersona = null) {
 
 		$paises = $this->Direccione->Paise->find('list', array(
 			'fields' => array('nombre'),
@@ -69,13 +69,15 @@ class DireccionesController extends AppController {
 			$this->Direccione->create();
 			if ($this->Direccione->save($this->request->data)) {
 				$this->Flash->success(__('La dirección se ha guardado.'));
-				return $this->redirect(array('action' => 'index'));
+				return $this->redirect(array('controller' => 'personas', 'action' => 'direcciones_persona', $idPersona));
 			} else {
 				$this->Flash->error(__('La dirección no pudo ser guardada, por favor intente nuevamente.'));
 			}
 		}
-		$personas = $this->Direccione->Persona->find('list');
-		$this->set(compact('personas'));
+		$personas = $this->Direccione->find('list');
+
+		$this->request->data['Direccione']['id_persona'] = $idPersona;
+		$this->set(compact('personas', 'idPersona'));
 	}
 
 /**
@@ -85,14 +87,14 @@ class DireccionesController extends AppController {
  * @param string $id
  * @return void
  */
-	public function edit($id = null) {
+	public function edit($id = null, $idPersona = null) {
 		if (!$this->Direccione->exists($id)) {
 			throw new NotFoundException(__('Invalid direccione'));
 		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Direccione->save($this->request->data)) {
 				$this->Flash->success(__('La dirección se ha guardado.'));
-				return $this->redirect(array('action' => 'index'));
+				return $this->redirect(array('controller' => 'personas', 'action' => 'direcciones_persona', $idPersona));
 			} else {
 				$this->Flash->error(__('La dirección no pudo ser guardada, por favor intente nuevamente.'));
 			}
@@ -100,8 +102,23 @@ class DireccionesController extends AppController {
 			$options = array('conditions' => array('Direccione.' . $this->Direccione->primaryKey => $id));
 			$this->request->data = $this->Direccione->find('first', $options);
 		}
-		$personas = $this->Direccione->Persona->find('list');
+		$personas = $this->Direccione->find('list');
 		$this->set(compact('personas'));
+
+		$paises = $this->Direccione->Paise->find('list', array(
+				'fields' => array('nombre'),
+			));
+		$this->set('paises', $paises);
+		$regiones = $this->Direccione->Regione->find('list', array(
+				'fields' => array('nombre'),
+				'conditions' => array('Regione.id_pais' => $this->request->data['Direccione']['id_pais'])
+			));
+		$this->set('regiones', $regiones);
+		$comunas = $this->Direccione->Comuna->find('list', array(
+				'fields' => array('nombre'),
+				'conditions' => array('Comuna.id_region' => $this->request->data['Direccione']['id_region'])
+			));
+		$this->set('comunas', $comunas);
 	}
 
 /**
@@ -111,7 +128,7 @@ class DireccionesController extends AppController {
  * @param string $id
  * @return void
  */
-	public function delete($id = null) {
+	public function delete($id = null, $idPersona = null) {
 		$this->Direccione->id = $id;
 		if (!$this->Direccione->exists()) {
 			throw new NotFoundException(__('Invalid direccione'));
@@ -120,8 +137,8 @@ class DireccionesController extends AppController {
 		if ($this->Direccione->delete()) {
 			$this->Flash->success(__('La dirección se ha borrado correctamente'));
 		} else {
-			$this->Flash->error(__('TLa dirección no pudo ser eliminada, por favor intente nuevamente.'));
+			$this->Flash->error(__('La dirección no pudo ser eliminada, por favor intente nuevamente.'));
 		}
-		return $this->redirect(array('action' => 'index'));
+		return $this->redirect(array('controller' => 'personas', 'action' => 'direcciones_persona', $idPersona));
 	}
 }

@@ -27,8 +27,8 @@
 		<td><?php echo h($viewTaskComment['ViewTaskComment']['updated']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $viewTaskComment['ViewTaskComment']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $viewTaskComment['ViewTaskComment']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $viewTaskComment['ViewTaskComment']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $viewTaskComment['ViewTaskComment']['id']))); ?>
+			<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $viewTaskComment['ViewTaskComment']['id'])); ?>
+			<?php echo $this->Form->postLink(__('Eliminar'), array('action' => 'delete', $viewTaskComment['ViewTaskComment']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $viewTaskComment['ViewTaskComment']['id']))); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>

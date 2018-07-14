@@ -35,44 +35,30 @@ class Direccione extends AppModel {
 
 	// The Associations below have been created with all possible keys, those that are not needed can be removed
 
-/**
- * belongsTo associations
- *
- * @var array
- */
-	public $belongsTo = array(
-		'Persona' => array(
-			'className' => 'Persona',
-			'foreignKey' => 'id_persona',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		)
-	);
 
 /**
  * hasOne associations
  *
  * @var array
  */
-	public $hasOne = array(
+	public $belongsTo = array(
 		'Paise' => array(
 			'className' => 'Paise',
-			'foreignKey' => 'id',
+			'foreignKey' => 'id_pais',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
 		),
 		'Regione' => array(
 			'className' => 'Regione',
-			'foreignKey' => 'id',
+			'foreignKey' => 'id_region',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
 		),
 		'Comuna' => array(
 			'className' => 'Comuna',
-			'foreignKey' => 'id',
+			'foreignKey' => 'id_comuna',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''

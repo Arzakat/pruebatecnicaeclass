@@ -150,11 +150,25 @@ class PersonasController extends AppController {
 	}
 
 	public function usuarios_persona($idPersona = null){
+		$persona = $this->Persona->find('first', array(
+			'conditions' => array('Persona.id' => $idPersona),
+			'contain' => array('Usuario'),
+			));
+		$this->set('persona', $persona);
+	}
 
-	$persona = $this->Persona->find('first', array(
-		'conditions' => array('Persona.id' => $idPersona),
-		'contain' => array('Usuario'),
+	public function direcciones_persona($idPersona = null){
+		$this->Persona->recursive = 2;
+		$persona = $this->Persona->find('first', array(
+			'conditions' => array(
+				'Persona.id' => $idPersona
+			),
+			'Direccione' => array(
+				'Regione',
+				'Comuna',
+				'Paise'
+			)
 		));
-	$this->set('persona', $persona);
+		$this->set('persona', $persona);
 	}
 }
