@@ -25,7 +25,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		<div id="header">
 			Menu: &nbsp;
 			<?php echo $this->Html->link(__('Inicio'), array(
-				'controller' => 'personas'
+				'controller' => 'personas/index'
 			)); ?>
 		</div>
 		<div id="content">

@@ -152,7 +152,7 @@ class PersonasController extends AppController {
 	public function usuarios_persona($idPersona = null){
 
 	$persona = $this->Persona->find('first', array(
-		'conditions' => array('id' => $idPersona),
+		'conditions' => array('Persona.id' => $idPersona),
 		'contain' => array('Usuario'),
 		));
 	$this->set('persona', $persona);

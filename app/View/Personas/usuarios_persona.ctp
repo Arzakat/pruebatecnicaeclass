@@ -33,6 +33,8 @@
 <div class="actions">
 	<h3><?php echo __('Acciones'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('Agregar Usuario'), array('controller' => 'usuarios', 'action' => 'add', $persona['Persona']['id'])); ?></li>
+		<li>
+			<?php echo $this->Html->link(__('Agregar Usuario'), array('controller' => 'usuarios', 'action' => 'add', $persona['Persona']['id'])); ?>
+		</li>
 	</ul>
 </div>
