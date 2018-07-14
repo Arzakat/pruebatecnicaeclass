@@ -32,6 +32,16 @@ class Persona extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
+		'apellido_paterno' => array(
+			'notBlank' => array(
+				'rule' => array('notBlank'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
 		'numero_documento' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
@@ -52,6 +62,13 @@ class Persona extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
+		'email' => array(
+			'unique' => array(
+		        'rule' => 'isUnique',
+		        'required' => 'create',
+		        'message' => 'El correo ingresado ya se encuentra registrado.'
+		    )
+		)
 	);
 
 	// The Associations below have been created with all possible keys, those that are not needed can be removed
