@@ -98,10 +98,12 @@ class PersonasController extends AppController {
 
 
 			$rutNuevo = $this->request->data['Persona']['numero_documento'];
-
+			
 			switch($this->request->data['Persona']['id_documento']){
 				// Cualquier otro
-				default:
+				case 1:
+				case 2:
+				case 4:
 					if(!is_numeric($rutNuevo)){
 						$this->Flash->error(__('Numero de documento invalido.'));
 						$errores++;
@@ -110,7 +112,7 @@ class PersonasController extends AppController {
 				// Es rut
 				case 3:
 					if(is_numeric($rutNuevo)){
-						if(!strlen($rutNuevo) == 7 || !strlen($rutNuevo) == 8){
+						if(strlen($rutNuevo) < 7 || strlen($rutNuevo) > 8){
 							$this->Flash->error(__('Numero de documento invalido.'));
 							$errores++;
 						}
